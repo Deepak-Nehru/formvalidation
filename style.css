@@ -55,7 +55,27 @@ form .field .input-area{
   width: 100%;
   position: relative;
 }
-form input{
+.task-input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 45px;
+    font-size: 18px;
+    background: none;
+    caret-color: #5372F0;
+    border-radius: 10px;
+    border: 1px solid #bfbfbf;
+    border-bottom-width: 2px;
+    transition: all 0.2s ease;
+    color: #bfbfbf;
+  }
+  
+  .task-input::placeholder {
+    color: #bfbfbf;
+    font-size: 17px;
+  }
+  
+form input, #push{
   width: 100%;
   height: 100%;
   outline: none;
@@ -92,7 +112,7 @@ form .field.error input{
   right: 15px;
   color: #dc3545;
 }
-form input:focus ~ .icon,
+form input, #push:focus ~ .icon,
 form .field.valid .icon{
   color: #5372F0;
 }
@@ -100,7 +120,7 @@ form .field.shake input:focus ~ .icon,
 form .field.error input:focus ~ .icon{
   color: #bfbfbf;
 }
-form input::placeholder{
+form input, #push::placeholder{
   color: #bfbfbf;
   font-size: 17px;
 }
@@ -127,7 +147,7 @@ form .pass-txt{
 .wrapper a:hover{
   text-decoration: underline;
 }
-form input[type="submit"]{
+form input[type="submit"],#push{
   height: 50px;
   margin-top: 30px;
   color: #fff;
@@ -138,6 +158,41 @@ form input[type="submit"]{
   border-bottom: 2px solid rgba(0,0,0,0.1);
   transition: all 0.3s ease;
 }
-form input[type="submit"]:hover{
+form input[type="submit"],#push:hover{
   background: #2c52ed;
 }
+#tasks {
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  #tasks .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10px 0;
+  }
+  
+  #tasks .task:last-child {
+    border-bottom: none; /* Remove the border from the last task */
+  }
+  
+  #tasks .task #taskname {
+    flex: 1;
+  }
+  
+  #tasks .task .delete {
+    cursor: pointer;
+  }
+  
+  #tasks .task .delete i {
+    color: #dc3545;
+    font-size: 24px; /* Adjust the font size to increase the button size */
+  }
+  
+  
